@@ -1,5 +1,3 @@
-# FATASS LIZIFFY V4
-
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="./README/vapelogo-white.png">
@@ -12,6 +10,11 @@
   <br/>
   Rise up to the top while remaining completely untouchable.
 </h2>
+
+## Contacts
+[Discord](https://discord.gg/GtmVtMc6) - MY DISCORD
+<br/>
+[Youtube](https://youtube.com/c/7GrandDadVape) - XYLEX YOUTUBE
 
 ## Usage
 1. Download the specific scripting utility of your choice.
