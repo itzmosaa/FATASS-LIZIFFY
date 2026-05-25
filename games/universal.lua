@@ -7923,7 +7923,7 @@ run(function()
 end)
 	
 run(function()
-	local Killaura
+	local BetterKillaura
 	local Targets
 	local CPS
 	local SwingRange
@@ -7952,8 +7952,8 @@ run(function()
 		return tool and tool:FindFirstChildWhichIsA('TouchTransmitter', true) or nil, tool
 	end
 	
-	Killaura = vape.Categories.Blatant:CreateModule({
-		Name = 'Killaura',
+	BetterKillaura = vape.Categories.Blatant:CreateModule({
+		Name = 'BetterKillaura',
 		Function = function(callback)
 			if callback then
 				repeat
@@ -8020,7 +8020,7 @@ run(function()
 					end
 	
 					task.wait()
-				until not Killaura.Enabled
+				until not BetterKillaura.Enabled
 			else
 				for _, v in Boxes do
 					v.Adornee = nil
@@ -8032,15 +8032,15 @@ run(function()
 		end,
 		Tooltip = 'Attack players around you\nwithout aiming at them.'
 	})
-	Targets = Killaura:CreateTargets({Players = true})
-	CPS = Killaura:CreateTwoSlider({
+	Targets = BetterKillaura:CreateTargets({Players = true})
+	CPS = BetterKillaura:CreateTwoSlider({
 		Name = 'Attacks per Second',
 		Min = 1,
 		Max = 20,
 		DefaultMin = 12,
 		DefaultMax = 12
 	})
-	SwingRange = Killaura:CreateSlider({
+	SwingRange = BetterKillaura:CreateSlider({
 		Name = 'Swing range',
 		Min = 1,
 		Max = 30,
@@ -8049,7 +8049,7 @@ run(function()
 			return val == 1 and 'stud' or 'studs'
 		end
 	})
-	AttackRange = Killaura:CreateSlider({
+	AttackRange = BetterKillaura:CreateSlider({
 		Name = 'Attack range',
 		Min = 1,
 		Max = 30,
@@ -8058,21 +8058,21 @@ run(function()
 			return val == 1 and 'stud' or 'studs'
 		end
 	})
-	AngleSlider = Killaura:CreateSlider({
+	AngleSlider = BetterKillaura:CreateSlider({
 		Name = 'Max angle',
 		Min = 1,
 		Max = 360,
 		Default = 90
 	})
-	Max = Killaura:CreateSlider({
+	Max = BetterKillaura:CreateSlider({
 		Name = 'Max targets',
 		Min = 1,
 		Max = 10,
 		Default = 10
 	})
-	Mouse = Killaura:CreateToggle({Name = 'Require mouse down'})
-	Lunge = Killaura:CreateToggle({Name = 'Sword lunge only'})
-	Killaura:CreateToggle({
+	Mouse = BetterKillaura:CreateToggle({Name = 'Require mouse down'})
+	Lunge = BetterKillaura:CreateToggle({Name = 'Sword lunge only'})
+	BetterKillaura:CreateToggle({
 		Name = 'Show target',
 		Function = function(callback)
 			BoxSwingColor.Object.Visible = callback
@@ -8096,20 +8096,20 @@ run(function()
 			end
 		end
 	})
-	BoxSwingColor = Killaura:CreateColorSlider({
+	BoxSwingColor = BetterKillaura:CreateColorSlider({
 		Name = 'Target Color',
 		Darker = true,
 		DefaultHue = 0.6,
 		DefaultOpacity = 0.5,
 		Visible = false
 	})
-	BoxAttackColor = Killaura:CreateColorSlider({
+	BoxAttackColor = BetterKillaura:CreateColorSlider({
 		Name = 'Attack Color',
 		Darker = true,
 		DefaultOpacity = 0.5,
 		Visible = false
 	})
-	Killaura:CreateToggle({
+	BetterKillaura:CreateToggle({
 		Name = 'Target particles',
 		Function = function(callback)
 			ParticleTexture.Object.Visible = callback
@@ -8124,7 +8124,7 @@ run(function()
 					part.CanCollide = false
 					part.Transparency = 1
 					part.CanQuery = false
-					part.Parent = Killaura.Enabled and gameCamera or nil
+					part.Parent = BetterKillaura.Enabled and gameCamera or nil
 					local particles = Instance.new('ParticleEmitter')
 					particles.Brightness = 1.5
 					particles.Size = NumberSequence.new(ParticleSize.Value)
@@ -8151,7 +8151,7 @@ run(function()
 			end
 		end
 	})
-	ParticleTexture = Killaura:CreateTextBox({
+	ParticleTexture = BetterKillaura:CreateTextBox({
 		Name = 'Texture',
 		Default = 'rbxassetid://14736249347',
 		Function = function()
@@ -8162,7 +8162,7 @@ run(function()
 		Darker = true,
 		Visible = false
 	})
-	ParticleColor1 = Killaura:CreateColorSlider({
+	ParticleColor1 = BetterKillaura:CreateColorSlider({
 		Name = 'Color Begin',
 		Function = function(hue, sat, val)
 			for _, v in Particles do
@@ -8175,7 +8175,7 @@ run(function()
 		Darker = true,
 		Visible = false
 	})
-	ParticleColor2 = Killaura:CreateColorSlider({
+	ParticleColor2 = BetterKillaura:CreateColorSlider({
 		Name = 'Color End',
 		Function = function(hue, sat, val)
 			for _, v in Particles do
@@ -8188,7 +8188,7 @@ run(function()
 		Darker = true,
 		Visible = false
 	})
-	ParticleSize = Killaura:CreateSlider({
+	ParticleSize = BetterKillaura:CreateSlider({
 		Name = 'Size',
 		Min = 0,
 		Max = 1,
@@ -8202,5 +8202,5 @@ run(function()
 		Darker = true,
 		Visible = false
 	})
-	Face = Killaura:CreateToggle({Name = 'Face target'})
+	Face = BetterKillaura:CreateToggle({Name = 'Face target'})
 end)
